@@ -43,6 +43,15 @@ class FlightService {
             throw error;
         }
     }
+
+    async updateFlight(flightId,data) {
+        try {
+            const flight = await this.flightRepository.updateFlight(flightId,data);
+            return flight;
+        } catch (error) {
+            console.log("Something went wrong while updating flight in the service layer")
+        }
+    }
 }
 
 module.exports = FlightService;
